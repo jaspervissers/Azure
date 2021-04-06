@@ -18,7 +18,7 @@ $ServerName = "$env:computername"
 
 #IIS 10.0 Server Installation (Role)
 "Installation of Web Server (IIS)" | Out-File $LogFile -Append -Force
-Install-WindowsFeature -Name Web-Server -ComputerName $ServerName –IncludeManagementTools | Out-File $LogFile -Append -Force
+Install-WindowsFeature -Name Web-Server -IncludeManagementTools -ComputerName $ServerName | Out-File $LogFile -Append -Force
 
 "Installation of HTTP Redirection" | Out-File $LogFile -Append -Force
 Install-WindowsFeature -Name Web-Http-Redirect -ComputerName $ServerName | Out-File $LogFile -Append -Force
