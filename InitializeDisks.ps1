@@ -2,7 +2,7 @@ $disks = Get-Disk | Where partitionstyle -eq 'raw' | sort number
 
 $letters = 70..89 | ForEach-Object { [char]$_ }
 $count = 0
-$labels = "data1","data2"
+$labels = "Index","Log","Apps","Index-backup"
 
 foreach ($disk in $disks) {
    $driveLetter = $letters[$count].ToString()
